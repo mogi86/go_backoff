@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: check
+        run: $(go env GOPATH) version
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
