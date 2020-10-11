@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: check run
+        run: go version
       - name: install wire
         run: go get -u github.com/google/wire/cmd/wire
       - name: run wire
