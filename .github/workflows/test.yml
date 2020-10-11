@@ -23,7 +23,6 @@ jobs:
       - name: Run golangci-lint
         run: >
           golangci-lint run \
-          --tests \
           --enable-all \
           --disable gochecknoglobals \
           --disable gochecknoinits
