@@ -2,29 +2,22 @@ name: Test
 on: [push]
 jobs:
   test:
-    name: test
+    setup:
+      runs-on: ubuntu-latest
+      steps:
+        - name: set up
+          uses: actions/setup-go@v2
+          with:
+            go-version: ^1.13
+          id: go
+        - name: check out
+          uses: actions/checkout@v2
+  lint:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: check run
-        run: go version
-      - name: install wire
-        run: go get -u github.com/google/wire/cmd/wire
-      - name: run wire
-        run: $(go env GOPATH)/bin/wire
-        working-directory: ./
-      - name: Install golangci-lint
-        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.31.0
-      - name: Run golangci-lint
-        run: >
-          golangci-lint run \
-            --tests \
-            --enable-all \
-            --disable gochecknoglobals \
-            --disable gochecknoinits
-        working-directory: ./
-      #- name: golangci-lint
-      #  uses: golangci/golangci-lint-action@v2
-      #  with:
-      #    version: v1.29
-      #    working-directory: ./
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v1
+        with:
+          version: v1.29
