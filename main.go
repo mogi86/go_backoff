@@ -17,8 +17,11 @@ func InitLogger(m Message) Logger {
 }
 
 func main() {
-	backId := 2
+	backId := 1
 	fmt.Println(backId)
+
+	hashId := 2
+	fmt.Println(hashId)
 
 	/*m := InitMessage()
 	l := InitLogger(m)*/
