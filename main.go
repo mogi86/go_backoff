@@ -5,7 +5,7 @@ import "fmt"
 type Message string
 
 func InitMessage() Message {
-	return     Message("hello!")
+	return Message("hello!")
 }
 
 type Logger struct {
@@ -17,6 +17,9 @@ func InitLogger(m Message) Logger {
 }
 
 func main() {
+	backId := 1
+	fmt.Println(backId)
+
 	/*m := InitMessage()
 	l := InitLogger(m)*/
 	l := InitLoggerViaWire()
