@@ -1,6 +1,6 @@
 package main
 
-// Hello greet
+// Hello greet.
 func Hello() string {
 	return "こんにちは世界。"
 }
