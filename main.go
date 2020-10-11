@@ -5,7 +5,7 @@ import "fmt"
 type Message string
 
 func InitMessage() Message {
-	return Message("hello!")
+	return Message(fmt.Sprintf("hello!"))
 }
 
 type Logger struct {
