@@ -25,3 +25,4 @@ jobs:
         with:
           version: v1.29
           working-directory: ./
+          args: --disable-all
