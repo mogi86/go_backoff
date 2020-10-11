@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: install wire
         run: go get -u github.com/google/wire/cmd/wire
-      - name: run wire
-        run: $(go env GOPATH)/bin/wire
+      #- name: run wire
+      #  run: $(go env GOPATH)/bin/wire
         working-directory: ./
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
