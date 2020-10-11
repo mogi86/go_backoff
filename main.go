@@ -20,5 +20,5 @@ func main() {
 	/*m := InitMessage()
 	l := InitLogger(m)*/
 	l := InitLoggerViaWire()
-	fmt.Println(l)
+	fmt.Println(l.Message)
 }
