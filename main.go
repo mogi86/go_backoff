@@ -17,7 +17,7 @@ func InitLogger(m Message) Logger {
 }
 
 func main() {
-	backId := 1
+	backId := 2
 	fmt.Println(backId)
 
 	/*m := InitMessage()
